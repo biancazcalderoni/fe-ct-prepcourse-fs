@@ -32,12 +32,16 @@ function agregarItemAlFinalDelArray(array, elemento) {
    // Agrega el "elemento" al final del arreglo recibido.
    // Retorna el arreglo.
    // Tu código:
+   array.push(elemento);
+   return array;
 }
 
 function agregarItemAlComienzoDelArray(array, elemento) {
    // Agrega el "elemento" al comienzo del arreglo recibido.
    // Retorna el arreglo.
    // Tu código:
+   array.unshift(elemento);
+   return array;
 }
 
 function dePalabrasAFrase(palabras) {
@@ -46,30 +50,50 @@ function dePalabrasAFrase(palabras) {
    // con un espacio entre cada palabra.
    // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'.
    // Tu código:
+   var string = palabras.join(' ');
+   return string;
 }
 
 function arrayContiene(array, elemento) {
    // Verifica si el elemento existe dentro del arreglo recibido.
    // Retornar true si está, o false si no está.
    // Tu código:
+   return array.includes(elemento);
 }
 
 function agregarNumeros(arrayOfNums) {
    // El parámetro "arrayOfNums" debe ser un arreglo de números.
    // Suma todos los elementos y retorna el resultado.
    // Tu código:
+   var total;
+   for (var i=0; i<arrayOfNums.length; i++){
+      total += arrayOfNums[i];
+   }
+   return total;
 }
 
 function promedioResultadosTest(resultadosTest) {
    // El parámetro "resultadosTest" es un arreglo de números.
    // Itera (en un bucle) los elementos del arreglo y devuelve el promedio de las notas.
    // Tu código:
+   var acum;
+   for (var i=0; i<resultadosTest.length; i++){
+      acum += resultadosTest[i];
+   }
+   return acum/resultadosTest.length;
 }
 
 function numeroMasGrande(arrayOfNums) {
    // El parámetro "arrayOfNums" es un arreglo de números.
    // Retornar el número más grande.
    // Tu código:
+   var mayor = 0;
+   for (var i=0; i<arrayOfNums.length; i++){
+      if(arrayOfNums[i]>mayor){
+         mayor = arrayOfNums[i];
+      }
+   }
+   return mayor;
 }
 
 function multiplicarArgumentos() {
@@ -82,6 +106,10 @@ function multiplicarArgumentos() {
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
    // Tu código:
+   var cont;
+   for (var i=0; i<array.length; i++){
+      
+   }
 }
 
 function diaDeLaSemana(numeroDeDia) {
