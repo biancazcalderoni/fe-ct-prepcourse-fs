@@ -65,7 +65,7 @@ function agregarNumeros(arrayOfNums) {
    // El parámetro "arrayOfNums" debe ser un arreglo de números.
    // Suma todos los elementos y retorna el resultado.
    // Tu código:
-   var total;
+   var total = 0;
    for (var i=0; i<arrayOfNums.length; i++){
       total += arrayOfNums[i];
    }
@@ -76,7 +76,7 @@ function promedioResultadosTest(resultadosTest) {
    // El parámetro "resultadosTest" es un arreglo de números.
    // Itera (en un bucle) los elementos del arreglo y devuelve el promedio de las notas.
    // Tu código:
-   var acum;
+   var acum = 0;
    for (var i=0; i<resultadosTest.length; i++){
       acum += resultadosTest[i];
    }
@@ -101,15 +101,25 @@ function multiplicarArgumentos() {
    // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
    // [PISTA]: "arguments" es un arreglo.
    // Tu código:
+   var total = 1;
+   if(arguments.length === 0) return 0;
+   else if (arguments.length === 1) return arguments[0];
+   else {
+      for (var i=0; i<arguments.length; i++){
+         total *= arguments[i];
+      }
+      return total;
+   }
 }
 
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
    // Tu código:
-   var cont;
+   var cont = 0;
    for (var i=0; i<array.length; i++){
-      
+      if(array[i] > 18) cont ++;
    }
+   return cont;
 }
 
 function diaDeLaSemana(numeroDeDia) {
@@ -117,18 +127,29 @@ function diaDeLaSemana(numeroDeDia) {
    // Realiza una función que, dado el número del día de la semana, retorne: "Es fin de semana"
    // si el día corresponde a "Sábado" o "Domingo", y "Es dia laboral" en caso contrario.
    // Tu código:
+   if (numeroDeDia > 1 && numeroDeDia < 7){
+      return "Es dia laboral";
+   } else {
+      return "Es fin de semana";
+   }
 }
 
 function empiezaConNueve(num) {
    // Esta función recibe por parámetro un número.
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
+   var arr = num.toString();
+   arr = arr.split('');
+   return arr[0] == 9;
 }
 
 function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
+   var comp = array[0];
+   const funigual = (elemento) => elemento === comp;
+   return array.every(funigual);
 }
 
 function mesesDelAño(array) {
@@ -136,19 +157,43 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
+   var newarr = [];
+   if (array.includes("Enero") && array.includes("Marzo") && array.includes("Noviembre")){
+      for (var i=0; i<array.length; i++){
+         if (array[i] == "Enero" || array[i] == "Marzo" || array[i] == "Noviembre"){
+            newarr.push(array[i]);
+         }
+      }
+      return newarr;
+   } else {
+      return "No se encontraron los meses pedidos";
+   }
 }
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+   var newarr = [];
+   for (var i=0; i<=10; i++){
+      newarr.push(6*i);
+   }
+   return newarr;
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   var newarr = [];
+   for (var i=0; i<array.length; i++){
+      if(array[i]>100){
+         newarr.push(array[i]);
+      }
+   }
+   return newarr;
 }
+
 
 /* ----------------------------------------------------------------------------------
 💪 EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT  EXTRA CREDIT 💪
@@ -161,6 +206,16 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   var newarr = [];
+   for (var i=0; i<10; i++){
+      if(num === i){
+         return "Se interrumpió la ejecución";
+         break;
+      } else {
+         newarr.push(num += 2);
+      }
+   }
+   return newarr;
 }
 
 function continueStatement(num) {
@@ -170,6 +225,15 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   var newarr = [];
+   for (var i=0; i<10; i++){
+      if(i === 5){
+         continue;
+      } else{
+      newarr.push(num += 2);
+      }
+   }
+   return newarr;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
